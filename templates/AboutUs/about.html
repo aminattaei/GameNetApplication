@@ -1,0 +1,307 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+  درباره ما | سایت جادوگر
+{% endblock title %}
+
+{% block content %}
+
+        <!-- Start breadcumb Area -->
+        <div class="page-area">
+            <div class="breadcumb-overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="breadcrumb text-center">
+                            <div class="section-headline white-headline">
+                                <h3>درباره ما</h3>
+                            </div>
+                            <ul class="breadcrumb-bg">
+                                <li class="home-bread">خانه</li>
+                                <li>درباره ما</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End breadcumb Area -->
+        <!-- Start About Area -->
+        <div class="About-feature-area bg-color-1 page-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="about-feature">
+                        <!-- Start column -->
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="single-about">
+                                <div class="feature-icon">
+                                    <i class="icon icon-cloud"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>خدمات توسعه بازی ها</h4>
+                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Start column -->
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="single-about">
+                                <div class="feature-icon">
+                                    <i class="icon icon-layers"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>چند پلت فرم</h4>
+                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Start column -->
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="single-about">
+                                <div class="feature-icon">
+                                    <i class="icon icon-gift"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>رقابت های بازی</h4>
+                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End column -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End About Area -->
+        <!-- about-area start -->
+        <div class="about-area bg-color-2 area-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="about-image">
+                            <img src="img/about/bg.jpg" alt="">
+                        </div>
+                    </div>
+                    <!-- column end -->
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="about-content">
+							<h4>استودیو جادوگر از سال 2003 شروع به تولید بازی های ابتکاری کرده است</h4>
+                            <p>استودیو جادوگر از سال 2003 شروع به تولید بازی های نوآورانه کرده است. ما خدمات مشتریان خود را ارائه می دهیم، از نمونه سازی اولیه تا توسعه بازی های کامل، از جمله طراحی، ایجاد هنری، توسعه و موسیقی. استودیو جادوگر از سال 2008 شروع به تولید بازی های ابتکاری کرده است.</p>
+                            <div class="about-award">
+                            	<h5>جوایز بین المللی بازی</h5>
+                            	<div class="award-img">
+                            		<a href="#"><img src="img/about/a1.png" alt=""></a>
+                            		<a href="#"><img src="img/about/a2.png" alt=""></a>
+                            		<a href="#"><img src="img/about/a3.png" alt=""></a>
+                            	</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- column end -->
+                </div>
+            </div>
+        </div>
+        <!-- about-area end -->
+        <!-- Team area start -->	
+        <div class="team-area bg-color-1 area-padding">
+            <div class="container">
+                <!-- section head -->
+                <div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="section-headline white-headline text-center">
+							<h3>مهارت های ما</h3>
+							<p>استودیو جادوگر از سال 2003 شروع به تولید بازی های ابتکاری کرده است. ما خدمات مشتریان خود را به مشتریان خود ارائه می دهیم.</p>
+						</div>
+					</div>
+				</div>
+                <div class="row">
+                    <div class="team-member team-carousel text-center">
+
+                        <!-- Single team member -->
+                        {% for user in users %}
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="single-member">
+                                <div class="team-img">
+                                    <a href="#">
+                                        <img src="{{ user.pic.url }}" alt="">
+                                    </a>
+                                </div>
+                                <div class="team-content">
+                                    <h4><a href="#">{{ user.name }}</a></h4>
+                                    <p>{{ user.job }}</p>
+                                    <ul class="team-hover">
+
+                                        <style>
+                                            .hoverClass:hover{
+                                                background-color:rgb(105, 163, 228);
+                                            }
+                                        </style>
+                                        {% if user.twitter_user_link %}
+                                          <li><a class="hoverClass" href="{{ user.twitter_user_link }}"><i class="fa fa-twitter"></i></a></li>
+                                        {% endif %}
+
+                                        {% if user.facebook_user_link %}
+                                        <li><a href="{{ user.user.facebook_user_link }}"><i class="fa fa-facebook"></i></a></li>
+
+                                        {% endif %}
+
+
+                                        {% if user.instagram_user_link %}
+                                          <li><a href="{{ user.instagram_user_link }}"><i class="fa fa-instagram"></i></a></li>
+                                        {% endif %}
+
+                                    </ul>
+                                </div>
+                            </div>
+                            </div>
+
+                        {% endfor %}
+                        
+
+                        <!-- Single team member -->
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- team area end -->
+        <!-- Start Brand Area -->
+        <div class="brand-area bg-color-2 area-padding">
+            <div class="container">
+                <div class="row">
+					<div class="brand-items">
+					    <div class="col-md-2 col-sm-4 col-xs-12">
+					    	<div class="single-brand-item">
+								<a href="#"><img src="{% static "img/brand/1.png" %}" alt=""></a>
+							</div>
+					    </div>
+					    <div class="col-md-2 col-sm-4 col-xs-12">
+					    	<div class="single-brand-item">
+								<a href="#"><img src="{% static "img/brand/2.png" %}" alt=""></a>
+							</div>
+					    </div>
+					    <div class="col-md-2 col-sm-4 col-xs-12">
+					    	<div class="single-brand-item">
+								<a href="#"><img src="{% static "img/brand/3.png" %}" alt=""></a>
+							</div>
+					    </div>
+					    <div class="col-md-2 col-sm-4 col-xs-12">
+					    	<div class="single-brand-item">
+								<a href="#"><img src="{% static "img/brand/4.png" %}" alt=""></a>
+							</div>
+					    </div>
+					    <div class="col-md-2 col-sm-4 col-xs-12">
+					    	<div class="single-brand-item">
+								<a href="#"><img src="{% static "img/brand/5.png" %}" alt=""></a>
+							</div>
+					    </div>
+					    <div class="col-md-2 col-sm-4 col-xs-12">
+					    	<div class="single-brand-item">
+								<a href="#"><img src="{% static "img/brand/5.png" %}" alt=""></a>
+							</div>
+					    </div>
+					</div>
+                </div>
+            </div>
+        </div>
+        <!-- end Brand Area -->
+        <!-- Start Challange Area -->
+        <div class="challange-area bg-color-1 area-padding">
+            <div class="container">
+                <div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="section-headline white-headline text-center">
+							<h3>مسابقه</h3>
+							<p>استودیو جادوگر از سال 2003 شروع به تولید بازی های ابتکاری کرده است. ما خدمات مشتریان خود را به مشتریان خود ارائه می دهیم.</p>
+						</div>
+					</div>
+				</div>
+                <div class="row">
+					<!-- End single page -->
+
+					<div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="tab-menu">
+                             <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" role="tablist">
+                                
+                                {% for comp in competitions %}
+        
+                                  <li class="cha.img">
+                                    <a href="#p-view-1" role="tab" data-toggle="tab">
+                                        <img class="cha-img" src="{{ comp.image.url }}" alt="{{ comp.title }}">
+                                        <span class="title-date">
+                                            <span class="cha-title">{{ comp.title }}</span>
+                                            <span class="cha-date">{{ comp.competition_date }}</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                {% endfor %}
+                                
+        
+                            </ul>
+                        </div>
+                    </div>
+
+					<div class="col-md-6 col-sm-6 col-xs-12">
+						<div class="tab-content">
+							<div class="tab-pane active" id="p-view-1">
+								<div class="tab-inner">
+									<div class="single-page">
+										<div class="page-img">
+											<img src="img/challange/b1.jpg" alt="">
+										</div>
+										<a href="https://www.youtube.com/watch?v=O33uuBh6nXA" class="video-play">
+											<i class="fa fa-play"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane" id="p-view-2">
+								<div class="tab-inner">
+									<div class="single-page">
+										<div class="page-img">
+											<img src="img/challange/b2.jpg" alt="">
+										</div>
+										<a href="https://www.youtube.com/watch?v=O33uuBh6nXA" class="video-play">
+											<i class="fa fa-play"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane" id="p-view-3">
+								<div class="tab-inner">
+									<div class="single-page">
+										<div class="page-img">
+											<img src="img/challange/b3.jpg" alt="">
+										</div>
+										<a href="https://www.youtube.com/watch?v=O33uuBh6nXA" class="video-play">
+											<i class="fa fa-play"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane" id="p-view-4">
+								<div class="tab-inner">
+									<div class="single-page">
+										<div class="page-img">
+											<img src="img/challange/b4.jpg" alt="">
+										</div>
+										<a href="https://www.youtube.com/watch?v=O33uuBh6nXA" class="video-play">
+											<i class="fa fa-play"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- end column -->
+				</div>
+				<!-- end Row -->
+            </div>
+        </div>
+        <!-- End Challange end -->
+        
+{% endblock content %}

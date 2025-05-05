@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block title %}
+    لیست مسابقات | سایت جادوگر
+{% endblock title %}
+
+{% block content %}
+
+
+<div id="compListClass" class="challange-area bg-color-2 area-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="section-headline white-headline text-center">
+                    <h3>مسابقه</h3>
+                    <p>استودیو جادوگر از سال 2003 شروع به تولید بازی های ابتکاری کرده است. ما خدمات مشتریان خود را به مشتریان خود ارائه می دهیم.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- End single page -->
+
+
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="tab-menu">
+                     <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        
+                        {% for comp in Competitions %}
+
+                          <li class="cha-img">
+                            <a href="#p-view-1" role="tab" data-toggle="tab">
+                                <img class="cha-img" src="{{ comp.image.url }}" alt="{{ comp.title }}">
+                                <span class="title-date">
+                                    <span class="cha-title">{{ comp.title }}</span>
+                                    <span class="cha-date">{{ comp.competition_date }}</span>
+                                </span>
+                            </a>
+                        </li>
+                        {% endfor %}
+                        
+
+                    </ul>
+                </div>
+            </div>
+
+            
+
+
+            <!-- <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="p-view-1">
+                        <div class="tab-inner">
+                            <div class="single-page">
+                                <div class="page-img">
+                                    <img src="static/img/challange/b1.jpg" alt="">
+                                </div>
+                                <a href="https://www.youtube.com/watch?v=O33uuBh6nXA" class="video-play">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="p-view-2">
+                        <div class="tab-inner">
+                            <div class="single-page">
+                                <div class="page-img">
+                                    <img src="static/img/challange/b2.jpg" alt="">
+                                </div>
+                                <a href="https://www.youtube.com/watch?v=O33uuBh6nXA" class="video-play">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="p-view-3">
+                        <div class="tab-inner">
+                            <div class="single-page">
+                                <div class="page-img">
+                                    <img src="static/img/challange/b3.jpg" alt="">
+                                </div>
+                                <a href="https://www.youtube.com/watch?v=O33uuBh6nXA" class="video-play">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="p-view-4">
+                        <div class="tab-inner">
+                            <div class="single-page">
+                                <div class="page-img">
+                                    <img src="static/img/challange/b4.jpg" alt="">
+                                </div>
+                                <a href="https://www.youtube.com/watch?v=O33uuBh6nXA" class="video-play">
+                                    <i class="fa fa-play"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- end column -->
+        </div>
+        <!-- end Row -->
+    </div>
+
+<!-- End Challange end -->
+{% endblock content %}

@@ -1,0 +1,289 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+	اطلاعات {{ gameNews }}
+{% endblock title %}
+
+{% block content %}
+
+        <!-- Start breadcumb Area -->
+        <div class="page-area">
+            <div class="breadcumb-overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="breadcrumb text-center">
+                            <div class="section-headline white-headline">
+                                <h3>جزئیات خبر بازی {{ gameNews.title }}</h3>
+                            </div>
+                            <ul class="breadcrumb-bg">
+                                <li class="home-bread">خانه</li>
+                                <li>جزئیات خبر بازی {{ gameNews.title }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End breadcumb Area -->
+        <!--Blog Area Start-->
+        <div class="blog-details bg-color-2 page-padding">
+			<div class="container">
+				<div class="row">
+
+					<div class="blog-details">
+						<!-- Start single blog -->
+						<div class="col-md-8 col-sm-8 col-xs-12">
+						    <!-- single-blog start -->
+							<article class="blog-post-wrapper">
+								<div class="blog-banner">
+									<a href="#" class="blog-images">
+										<img src="{{ gameNews.image.url }}" alt="{{ gameNews.title }}">
+									</a>
+									<div class="blog-content">
+										<div class="blog-meta">
+											<span class="date-type">
+												{{ gameNews.publish_date }}
+											</span>
+										</div>
+										<h4>{{ gameNews.title }}</h4>
+										<p>{{ gameNews.description }}</p>
+									</div>
+								</div>
+							</article>
+							<div class="clear"></div>
+							<div class="single-post-comments">
+								<div class="comments-area">
+								    <div class="comments-heading">
+                                        <h3>4 نظر</h3>
+                                    </div>
+									<div class="comments-list">
+										<ul>
+											<li class="threaded-comments">
+												<div class="comments-details">
+													<div class="comments-list-img">
+														<img src="img/blog/avater.jpg" alt="post-author">
+													</div>
+													<div class="comments-content-wrap">
+														<span>
+															<b><a href="#">آرش</a></b>
+															نویسنده پست
+															<span class="post-time">6 ژانویه 2018</span>
+															<a href="#">پاسخ</a>
+														</span>
+														<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان</p>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="comments-details">
+													<div class="comments-list-img">
+														<img src="img/blog/avater1.jpg" alt="post-author">
+													</div>
+													<div class="comments-content-wrap">
+														<span>
+															<b><a href="#">آرش</a></b>
+															نویسنده پست
+															<span class="post-time">6 ژانویه 2018</span>
+															<a href="#">پاسخ</a>
+														</span>
+														<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون</p>
+													</div>
+												</div>
+											</li>
+											<li class="threaded-comments">
+												<div class="comments-details">
+													<div class="comments-list-img">
+														<img src="img/blog/avater.jpg" alt="post-author">
+													</div>
+													<div class="comments-content-wrap">
+														<span>
+															<b><a href="#">آرش</a></b>
+															نویسنده پست
+															<span class="post-time">6 ژانویه 2018</span>
+															<a href="#">پاسخ</a>
+														</span>
+														<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان</p>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="comments-details">
+													<div class="comments-list-img">
+														<img src="img/blog/avater1.jpg" alt="post-author">
+													</div>
+													<div class="comments-content-wrap">
+														<span>
+															<b><a href="#">آرش</a></b>
+															نویسنده پست
+															<span class="post-time">6 ژانویه 2018</span>
+															<a href="#">پاسخ</a>
+														</span>
+														<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون</p>
+													</div>
+												</div>
+											</li>									
+										</ul>
+									</div>
+								</div>
+								<div class="comment-respond">
+									<h3 class="comment-reply-title">ارسال یک پاسخ </h3>
+									<span class="email-notes">آدرس ایمیل شما منتشر نخواهد شد. زمینه های مورد نیاز مشخص شده اند *</span>
+									<form action="#">
+										<div class="row">
+											<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+												<p>نام اصلی *</p>
+												<input type="text" />
+											</div>
+											<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+												<p>نام خانوادگی *</p>
+												<input type="text" />
+											</div>
+											<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+												<p>ایمیل *</p>
+												<input type="email" />
+											</div>
+											<div class="col-lg-12 col-md-12 col-sm-12 comment-form-comment">
+												<p>پیام *</p>
+												<textarea id="message-box" cols="30" rows="10"></textarea>
+												<input class="add-btn contact-btn" type="submit" value="ارسال نظر" />
+											</div>
+										</div>
+									</form>
+								</div>						
+							</div>
+							<!-- single-blog end -->
+
+						</div>
+					</div>
+
+					<!-- End main column -->
+					<!-- Start single blog -->
+					<div class="col-md-4 col-sm-4 col-xs-12">
+						<div class="left-head-blog">
+							<div class="left-blog-page">
+								<!-- search option start -->
+								<form action="#">
+									<div class="blog-search-option">
+										<input type="text" placeholder="جستجو...">
+										<button class="button" type="submit">
+											<i class="fa fa-search"></i>
+										</button>
+									</div>
+								</form>
+								<!-- search option end -->
+							</div>
+
+							<div class="left-blog-page">
+								<div class="left-blog">
+									<h4>دسته ها</h4>
+									<ul>
+										<li><a href="#">جنگ اژدها</a></li>
+										<li><a href="#">انیمیشن غریبه</a></li>
+										<li><a href="#">چالش اسکای فال</a></li>
+										<li><a href="#">جنگ ریپل</a></li>
+										<li><a href="#">آلومورود دیوید</a></li>
+										<li><a href="#">مبارزه دنریس</a></li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="left-blog-page">
+								<!-- recent start -->
+								<div class="left-blog">
+									<h4>پست های اخیر</h4>
+									<div class="recent-post">
+										<!-- start single post -->
+										<div class="recent-single-post">
+											<div class="post-img">
+												<a href="#">
+													<img src="img/blog/b1.jpg" alt="">
+												</a>
+											</div>
+											<div class="pst-content">
+												<p><a href="#">طراح باید مطمئن شود که نمونه اولیه به نظر می رسد.</a></p>
+												<span class="date-type">
+													26 ژانویه / 2018
+												</span>
+											</div>
+										</div>
+										<!-- End single post -->
+
+										<!-- start single post -->
+										<div class="recent-single-post">
+											<div class="post-img">
+												<a href="#">
+													<img src="img/blog/b2.jpg" alt="">
+												</a>
+											</div>
+											<div class="pst-content">
+												<p><a href="#">طراح باید مطمئن شود که نمونه اولیه به نظر می رسد.</a></p>
+												<span class="date-type">
+													26 ژانویه / 2018
+												</span>
+											</div>
+										</div>
+
+										<!-- End single post -->
+										 
+										<!-- start single post -->
+										<div class="recent-single-post">
+											<div class="post-img">
+												<a href="#">
+													<img src="img/blog/b3.jpg" alt="">
+												</a>
+											</div>
+											<div class="pst-content">
+												<p><a href="#">طراح باید مطمئن شود که نمونه اولیه به نظر می رسد.</a></p>
+												<span class="date-type">
+													26 ژانویه / 2018
+												</span>
+											</div>
+										</div>
+										<!-- End single post -->
+
+										<!-- start single post -->
+										<div class="recent-single-post">
+											<div class="post-img">
+												<a href="#">
+													<img src="img/blog/b4.jpg" alt="">
+												</a>
+											</div>
+											<div class="pst-content">
+												<p><a href="#">طراح باید مطمئن شود که نمونه اولیه به نظر می رسد.</a></p>
+												<span class="date-type">
+													26 ژانویه / 2018
+												</span>
+
+											</div>
+										</div>
+										<!-- End single post -->
+
+									</div>
+								</div>
+								<!-- recent end -->
+							</div>
+							<div class="left-blog-page">
+								<div class="left-tags blog-tags">
+									<div class="popular-tag left-side-tags left-blog">
+										<h4>برچسب های محبوب</h4>
+										<ul>
+											<li><a href="#">اژدها</a></li>
+											<li><a href="#">غریبه</a></li>
+											<li><a href="#">چالش</a></li>
+											<li><a href="#">ریپل</a></li>
+											<li><a href="#">آلومورود</a></li>
+											<li><a href="#">دنریس</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- End single blog -->
+				</div>
+				<!-- End row -->
+			</div>
+		</div>
+		<!--End of Blog Area-->	
+{% endblock content %}

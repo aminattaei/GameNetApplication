@@ -1,0 +1,9 @@
+from django.urls import path
+from . import views
+
+
+urlpatterns = [
+    path("", views.IndexPageListView.as_view(), name="home_index"),
+    path('<int:pk>/',views.GameNewsDetailView.as_view(),name='GameNews_detail')
+
+]

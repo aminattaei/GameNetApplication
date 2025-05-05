@@ -1,0 +1,205 @@
+{% extends "base.html" %}
+
+{% block title %}
+  سایت جادوگر | لیست بازی ها
+{% endblock title %}
+
+{% block content %}
+ <!-- Start breadcumb Area -->
+ <div class="page-area">
+	<div class="breadcumb-overlay"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-sm-12 col-xs-12">
+				<div class="breadcrumb text-center">
+					<div class="section-headline white-headline">
+						<h3>بازی های ما</h3>
+					</div>
+					<ul class="breadcrumb-bg">
+						<li class="home-bread">خانه</li>
+						<li>بازی های ما</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End breadcumb Area -->
+<!-- Welcome service area start -->
+<div class="services-area bg-color-2 page-padding">
+	<div class="container">
+		<div class="row">
+			<div class="services-carousel">
+				<!-- single-well end-->
+				<div class="col-md-4 col-sm-4 col-xs-12">
+					<div class="single-services text-center">
+						<div class="services-img">
+							<img src="static/img/feature/1.jpg" alt="">
+							<div class="image-layer">
+								<img src="static/img/icon/g1.png" alt="icon Image">
+							</div>
+						</div>
+						<div class="main-services">
+							<div class="service-content">
+								<h4>موج دار شدن سلطنتی</h4>
+								<p>به زودی 4 فوریه 2019</p>
+								<a class="service-btn" href="#">بیشتر بدانید</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- single-well end-->
+				<div class="col-md-4 col-sm-4 col-xs-12">
+					<div class="single-services text-center">
+						<div class="services-img">
+							<img src="static/img/feature/2.jpg" alt="">
+							<div class="image-layer">
+								<img src="static/img/icon/g2.png" alt="icon Image">
+							</div>
+						</div>
+						<div class="main-services">
+							<div class="service-content">
+								<h4>روی رقاص</h4>
+								<p>به زودی 4 فوریه 2019</p>
+								<a class="service-btn" href="#">بیشتر بدانید</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- single-well end-->
+				<div class="col-md-4 col-sm-4 col-xs-12">
+					<div class="single-services text-center">
+						<div class="services-img">
+							<img src="static/img/feature/3.jpg" alt="">
+							<div class="image-layer">
+								<img src="static/img/icon/g3.png" alt="icon Image">
+							</div>
+						</div>
+						<div class="main-services">
+							<div class="service-content">
+								<h4>مبارزه با چالش</h4>
+								<p>به زودی 4 فوریه 2019</p>
+								<a class="service-btn" href="#">بیشتر بدانید</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- single-well end-->
+				<div class="col-md-4 col-sm-4 col-xs-12">
+					<div class="single-services text-center">
+						<div class="services-img">
+							<img src="static/img/feature/4.jpg" alt="">
+							<div class="image-layer">
+								<img src="static/img/icon/g4.png" alt="icon Image">
+							</div>
+						</div>
+						<div class="main-services">
+							<div class="service-content">
+								<h4>آسمان آبی</h4>
+								<p>به زودی 4 فوریه 2019</p>
+								<a class="service-btn" href="#">بیشتر بدانید</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- single-well end-->
+				<div class="col-md-4 col-sm-4 col-xs-12">
+					<div class="single-services text-center">
+						<div class="services-img">
+							<img src="static/img/feature/5.jpg" alt="">
+							<div class="image-layer">
+								<img src="static/img/icon/g5.png" alt="icon Image">
+							</div>
+						</div>
+						<div class="main-services">
+							<div class="service-content">
+								<h4>جهان اژدها</h4>
+								<p>به زودی 4 فوریه 2019</p>
+								<a class="service-btn" href="#">بیشتر بدانید</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- single-well end-->
+				<div class="col-md-4 col-sm-4 col-xs-12">
+					<div class="single-services text-center">
+						<div class="services-img">
+							<img src="static/img/feature/6.jpg" alt="">
+							<div class="image-layer">
+								<img src="static/img/icon/g6.png" alt="icon Image">
+							</div>
+						</div>
+						<div class="main-services">
+							<div class="service-content">
+								<h4>انیمیشن عجیب و غریب</h4>
+								<p>به زودی 4 فوریه 2019</p>
+								<a class="service-btn" href="#">بیشتر بدانید</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- single-well end-->
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Welcome service area End -->
+<!-- Start Product Area -->
+<div class="product-area bg-color-1 area-padding">
+	<div class="container">
+	   <div class="row">
+			<div class="col-md-12 col-sm-12 col-xs-12">
+				<div class="section-headline white-headline text-center">
+					<h3>بازی های ما</h3>
+					<p>استودیو جادوگر از سال 2003 شروع به تولید بازی های ابتکاری کرده است. ما خدمات مشتریان خود را به مشتریان خود ارائه می دهیم.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="best-product">
+				{% for game in Games %}
+
+				  	<!-- Start single product -->
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="single-product">
+							<!-- Start product content -->
+								<div class="col-md-6 col-sm-6 hidden-xs">
+									<div class="product-content text-center">
+										<h4 class="product-name">
+											<a href="http://127.0.0.1:8000/games/{{game.pk}}">{{ game.title }}</a>
+										</h4>
+										<div class="launch-date">
+											<span>راه اندازی: {{ game.launch_date }}</span>
+										</div>
+										<div class="price-box">
+											<span class="price">قیمت: {{ game.price }} هزار تومان</span>
+										</div>
+										<div class="pro-rating no-rating">
+											<span class="rating-rate"> امتیاز: {{ game.rating }}</span>
+											{% for star in game.stars.count %}
+												<a href="#"><i class="fa fa-star-o"></i></a>
+											{% endfor %}
+											
+											
+										</div>
+										<div class="download-btn">
+											<span class="play-btn"><img src="{{ game.media.url }}" alt="{{ game.title }}"></span>
+											
+										</div>
+									</div>
+								</div>
+							<!-- End product content -->
+
+						</div>
+					</div>
+					<!-- End single product -->
+
+				{% endfor %}
+				
+
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End Product Area -->
+{% endblock content %}

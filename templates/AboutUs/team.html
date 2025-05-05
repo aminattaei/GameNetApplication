@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    درباره ما | سایت جادوگر       
+{% endblock title %}
+
+{% block content %}
+
+
+        <!-- Start breadcumb Area -->
+        <div class="page-area">
+            <div class="breadcumb-overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="breadcrumb text-center">
+                            <div class="section-headline white-headline">
+                                <h3>تیم ما</h3>
+                            </div>
+                            <ul class="breadcrumb-bg">
+                                <li class="home-bread">خانه</li>
+                                <li>تیم ما</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End breadcumb Area -->
+        <!-- Team area start -->	
+        <div class="team-area bg-color-2 page-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="team-member text-center">
+
+                        <!-- Single team member -->
+                        {% for user in users %}
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="single-member">
+                                <div class="team-img">
+                                    <a href="#">
+                                        <img src="{{ user.pic.url }}" alt="">
+                                    </a>
+                                </div>
+                                <div class="team-content">
+                                    <h4><a href="#">{{ user.name }}</a></h4>
+                                    <p>{{ user.job }}</p>
+                                    <ul class="team-hover">
+
+                                        <style>
+                                            .hoverClass:hover{
+                                                background-color:rgb(105, 163, 228);
+                                            }
+                                        </style>
+                                        {% if user.twitter_user_link %}
+                                          <li><a class="hoverClass" href="{{ user.twitter_user_link }}"><i class="fa fa-twitter"></i></a></li>
+                                        {% endif %}
+
+                                        {% if user.facebook_user_link %}
+                                        <li><a href="{{ user.user.facebook_user_link }}"><i class="fa fa-facebook"></i></a></li>
+
+                                        {% endif %}
+
+
+                                        {% if user.instagram_user_link %}
+                                          <li><a href="{{ user.instagram_user_link }}"><i class="fa fa-instagram"></i></a></li>
+                                        {% endif %}
+
+                                    </ul>
+                                </div>
+                            </div>
+                            </div>
+
+                        {% endfor %}
+                        
+
+                        <!-- Single team member -->
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- team area end -->
+
+{% endblock content %}
