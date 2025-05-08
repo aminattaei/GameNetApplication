@@ -7,13 +7,16 @@ class ContactUs(models.Model):
     email = models.EmailField(_("ایمیل"), max_length=254)
     subject = models.CharField(_("موضوع"), max_length=50)
     message = models.TextField(_("پیام "))
+    created_time = models.DateTimeField(
+        _("زمان ایجاد پیغام"), auto_now=False, auto_now_add=True
+    )
 
     class Meta:
         verbose_name = _("ContactUs")
         verbose_name_plural = _("ContactUss")
 
     def __str__(self):
-        return self.name
+        return f"Name: {self.name} / Time: {self.created_time}"
 
     # def get_absolute_url(self):
     #     from django.urls import reverse

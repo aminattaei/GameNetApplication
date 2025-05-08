@@ -4,5 +4,6 @@ from . import views
 
 
 urlpatterns = [
-    path("", views.ContactCreateView.as_view(), name="create_new_contact"),
+    # path("", views.ContactCreateView.as_view(), name="create_new_contact"),
+    path("", views.ContactUsCreate, name="create_new_contact"),
 ]
