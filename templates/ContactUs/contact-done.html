@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}
+  ارتباط موفقیت آمیز | سایت جادوگر
+{% endblock title %}
+
+{% block contact %}
+    <h1 class="alert alert-succes"> شما با موفقیت با تیم ما ارتباط برقرار کردید.</h1>
+    <hr>
+
+    <button type="button">
+        <a href="{% url 'home_index' %}"> بازگشت به صفحه اصلی -> </a>
+    </button>
+{% endblock contact %}
