@@ -146,11 +146,27 @@
 
                                     </div>
                                 </form>  
+
+                                    
+                                    
+                                
                             </div>
                         </div>
                     </div>
+                    
                     <!-- End contact Form -->
                 </div>
+                <hr>
+                <br>
+                {% if messages %}
+                        {% for message in messages %}
+                        
+                                <div class="alert alert-{{ message.tags }}" role="alert">
+                                        {{ message }}
+                                </div>
+
+                        {% endfor %}
+                {% endif %}
             </div>
         </div>
         <!-- End Contact Area -->

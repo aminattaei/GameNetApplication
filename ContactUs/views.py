@@ -1,21 +1,6 @@
 from django.shortcuts import render, redirect
-from django.views import generic
-from django.contrib.auth import get_user_model
+from django.contrib import messages
 from .forms import ContactForm
-
-User = get_user_model()
-
-from .models import ContactUs
-
-
-# class ContactCreateView(generic.CreateView):
-#     model = ContactUs
-#     fields = ("name", "email", "subject", "message")
-#     template_name = "ContactUs/contact.html"
-
-#     def get_queryset(self):
-#         queryset = super().get_queryset()
-#         queryset.user = self.user
 
 
 def ContactUsCreate(request):
@@ -27,7 +12,15 @@ def ContactUsCreate(request):
                 obj.name = request.user.username
                 obj.email = request.user.email
             obj.save()
-            return redirect("ContactUs/contact-done.html")
+            messages.success(
+                request, "نظر شما با موفقیت برای تیم ما ارسال گردید.با تشکر از شما"
+            )
+        else:
+            messages.error(
+                request,
+                "خطایی در ارسال نظر وجود دارد صحت اطلاعات وارد شده را بررسی کنید یا دوباره امتحان کنید.متاسفیم بابت وجود خطا!",
+            )
+
     else:
         form = ContactForm()
 
