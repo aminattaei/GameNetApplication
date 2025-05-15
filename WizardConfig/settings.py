@@ -25,6 +25,8 @@ INSTALLED_APPS = [
     "IndexPage",
     "ContactUs",
     "Competition",
+    "accounts",
+    
     
     # < --- TOOLS --- >
     "rest_framework",
@@ -123,3 +125,15 @@ SIMPLE_JWT = {
     "BLACKLIST_AFTER_ROTATION": True,
     "UPDATE_LAST_LOGIN": True,
 }
+
+LOGIN_REDIRECT_URL = "http://127.0.0.1:8000/"
+
+LOGOUT_REDIRECT_URL = "http://127.0.0.1:8000/"
+
+AUTH_USER_MODEL = "accounts.CustomUser"
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+CORS_ALLOW_ALL_ORIGINS = True

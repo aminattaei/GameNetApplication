@@ -86,7 +86,6 @@
 													<li><a href="{% url 'about-us' %}">درباره ما</a></li>
 													<li><a href="{% url 'team_members_list' %}">تیم</a></li>
 													<li><a href="faq.html">سوالات متداول</a></li>
-													<li><a href="error.html">ارور</a></li>
 												</ul>
 											</li>
 											<li><a class="pagess" href="{% url 'games_list' %}">بازی ها</a>
@@ -96,7 +95,7 @@
 											<li><a class="pagess" href="{% url 'matchs_list' %}">مسابقات</a>
 											</li>
 											<li><a class="pagess" href="{% url 'articles_list' %}">وبلاگ</a></li>
-											<li><a href="contact.html">تماس</a></li>
+											<li><a href="{% url 'create_new_contact' %}">تماس</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -127,17 +126,11 @@
 												<li><a href="error.html">ارور</a></li>
 											</ul>
 										</li>
-										<li><a class="pagess" href="#">بازی ها</a>
-											<ul class="sub-menu">
-												<li><a href="games.html">همه بازی ها</a></li>
-												<li><a href="single-game.html">جزئیات بازی</a></li>
-											</ul>
+										<li><a class="pagess" href="{% url 'games_list' %}">بازی ها</a>
+											</li>
+											
 										</li>
 										<li><a class="pagess" href="#">گالری</a>
-											<ul class="sub-menu">
-												<li><a href="gallery-3.html">پروژه 3 ستونه</a></li>
-												<li><a href="gallery-4.html">پروژه 4 ستونه</a></li>
-											</ul>
 										</li>
 										<li><a class="pagess" href="#">وبلاگ</a>
 											<ul class="sub-menu">

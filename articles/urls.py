@@ -8,6 +8,6 @@ router.register("", views.ArticleModelViewSet)
 
 urlpatterns = [
     path("", views.ArticleListView.as_view(), name="articles_list"),
-    path("<int:pk>/", views.ArticleDetailView.as_view(), name="Article_detail"),
+    path("<int:pk>/", views.Article_Detail, name="Article_detail"),
     path("api/", include(router.urls)),
 ]

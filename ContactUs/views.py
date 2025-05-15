@@ -7,11 +7,7 @@ def ContactUsCreate(request):
     if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
-            obj = form.save(commit=False)
-            if request.user.is_authenticated:
-                obj.name = request.user.username
-                obj.email = request.user.email
-            obj.save()
+            form.save()
             messages.success(
                 request, "نظر شما با موفقیت برای تیم ما ارسال گردید.با تشکر از شما"
             )
