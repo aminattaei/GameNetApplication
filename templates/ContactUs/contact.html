@@ -1,0 +1,174 @@
+{% extends "base.html" %}
+
+{% block title %}
+  تماس با ما | سایت جادوگر
+{% endblock title %}
+
+
+{% block content %}
+
+        <!-- Start breadcumb Area -->
+        <div class="page-area">
+            <div class="breadcumb-overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="breadcrumb text-center">
+                            <div class="section-headline white-headline">
+                                <h3>با ما در تماس باشید.</h3>
+                            </div>
+                            <ul class="breadcrumb-bg">
+                                <li class="home-bread">خانه</li>
+                                <li>تماس با ما</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End breadcumb Area -->
+        <!-- Start contact Area -->
+        <div class="contact-area bg-color-2 page-padding">
+            <div class="container">
+                <div class="row contact-page">
+                    <!-- Start contact icon column -->
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="office-city">
+                            <h4>اداره تهران</h4>
+                            <div class="contact-icon">
+                                <div class="single-icon">
+                                    <i class="fa fa-phone"></i>
+                                    <p>
+                                        تماس : +0091-654-876<br>
+                                        <span>دوشنبه تا جمعه (ساعت 10 صبح تا 18:00غروب)</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="contact-icon">
+                                <div class="single-icon">
+                                    <i class="fa fa-envelope-o"></i>
+                                    <p>
+                                        ایمیل : promo45@gmail.com<br>
+                                        <span>وب: www.promo_rte.com</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="contact-icon">
+                                <div class="single-icon">
+                                    <i class="fa fa-map-marker"></i>
+                                    <p>
+                                        موقعیت : تهران<br>
+                                        <span>12 خانه / 5 جاده</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Start contact icon column -->
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="office-city">
+                            <h4>اداره کرج</h4>
+                            <div class="contact-icon">
+                                <div class="single-icon">
+                                    <i class="fa fa-phone"></i>
+                                    <p>
+                                        تماس : +0091-654-876<br>
+                                        <span>دوشنبه تا جمعه (ساعت 10 صبح تا 18:00غروب)</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="contact-icon">
+                                <div class="single-icon">
+                                    <i class="fa fa-envelope-o"></i>
+                                    <p>
+                                        ایمیل : promo45@gmail.com<br>
+                                        <span>وب: www.promo_rte.com</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="contact-icon">
+                                <div class="single-icon">
+                                    <i class="fa fa-map-marker"></i>
+                                    <p>
+                                        موقعیت : کرج<br>
+                                        <span>12 خانه / 5 جاده</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End row -->
+                <div class="row">
+                    <!-- Start contact icon column -->
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <!-- Start Map -->
+                        <div class="map-area">
+                            <div id="googleMap" style="width:100%;height:350px;"></div>
+                        </div>
+                        <!-- End Map -->
+                    </div>
+                    <!-- End contact icon -->
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="contact-form">
+                            <div class="row">
+                                <form method="POST" class="contact-form">
+                                    {% csrf_token %}
+
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input type="text" id="name" name='name' class="form-control" placeholder="نام" required data-error="لطفا نام خود را وارد کنید">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+
+
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input type="email" class="email form-control" id="email" placeholder="ایمیل" name="email" required data-error="لطفا آدرس اییمیل خود را وارد نمایید">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+
+
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <input type="text" id="subject" class="form-control" placeholder="موضوع" name="subject" required data-error="لطفا موضوع پیام خود را وارد کنید">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+
+
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <textarea id="message" name="message" rows="7" placeholder="پیام" class="form-control" required data-error="پیام خود را بنویسید"></textarea>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+
+
+                                    <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+
+                                        <button type="submit" class="add-btn contact-btn">ارسال پیام</button>
+
+
+                                    </div>
+                                </form>  
+
+                                    
+                                    
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- End contact Form -->
+                </div>
+                <hr>
+                <br>
+                {% if messages %}
+                        {% for message in messages %}
+                        
+                                <div class="alert alert-{{ message.tags }}" role="alert">
+                                        {{ message }}
+                                </div>
+
+                        {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+        <!-- End Contact Area -->
+        
+{% endblock content %}

@@ -1,0 +1,414 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+	صفحه اصلی | سایت جادوگر
+{% endblock title %}
+
+
+{% block content %}
+<div class="intro-area">
+           <div class="main-overly"></div>
+            <div class="intro-carousel">
+                <div class="intro-content">
+                    <div class="slider-images">
+                        <img src="static/img/slider/s1.jpg" alt="">
+                    </div>
+                    <div class="slider-content">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-12 text-center">
+									<!-- layer 1 -->
+									<div class="layer-1-2">
+										<h1 class="title2">جادوگر دنیای مجازی خود را ایجاد کنید </h1>
+									</div>
+									<div class="layer-1-1 hidden-xs">
+										<p>استودیو جادوگر از سال 2003 شروع به تولید بازی های ابتکاری کرده است. ما خدمات مشتریان خود را به مشتریان خود ارائه می دهیم.</p>
+									</div>
+									<!-- layer 3 -->
+									<div class="layer-1-3">
+										<a href="#" class="ready-btn" >بیشتر بدانید</a>
+									</div>
+								</div>
+							</div>
+						</div>
+                    </div>
+                </div>
+                <div class="intro-content">
+                    <div class="slider-images">
+                        <img src="static/img/slider/s2.jpg" alt="">
+                    </div>
+                    <div class="slider-content">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-12 text-center">
+									<!-- layer 1 -->
+									<div class="layer-1-2">
+										<h1 class="title2">ما چالش بعدی خود را آماده می کنیم</h1>
+									</div>
+									<div class="layer-1-1 hidden-xs">
+										<p>استودیو جادوگر از سال 2003 شروع به تولید بازی های ابتکاری کرده است. ما خدمات مشتریان خود را به مشتریان خود ارائه می دهیم.</p>
+									</div>
+									<!-- layer 3 -->
+									<div class="layer-1-3">
+										<a href="#" class="ready-btn" >بیشتر بدانید</a>
+									</div>
+								</div>
+							</div>
+						</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Slider Area -->
+        <!-- Welcome service area start -->
+        <div class="services-area bg-color-2 area-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="services-carousel">
+
+						{% for upcomingGame in upcomingGames %}
+						  
+						
+							<!-- single-well end-->
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<div class="single-services text-center">
+									<div class="services-img">
+										<img src="{{ upcomingGame.pic.url }}" alt="">
+										<div class="image-layer">
+											<img src="{{ upcomingGame.icon.url }}" alt="icon Image">
+										</div>
+									</div>
+									<div class="main-services">
+										<div class="service-content">
+											<h4>{{ upcomingGame.title }}</h4>
+											<p>{{ upcomingGame.release_date }}</p>
+											<a class="service-btn" href="#">بیشتر بدانید</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- single-well end-->
+
+						{% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Welcome service area End -->
+        <!-- Start Product Area -->
+        <div class="product-area bg-color-1 area-padding">
+            <div class="container">
+               <div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="section-headline white-headline text-center">
+							<h3>بازی های ما</h3>
+							<p>استودیو جادوگر از سال 2003 شروع به تولید بازی های ابتکاری کرده است. ما خدمات مشتریان خود را به مشتریان خود ارائه می دهیم.</p>
+						</div>
+					</div>
+				</div>
+                <div class="row">
+                    <div class="best-product">
+
+						{% for game in games %}
+
+							<!-- Start single product -->
+							<div class="col-md-12 col-sm-12 col-xs-12">
+								<div class="single-product">
+									<div class="col-md-6 col-sm-6 col-xs-12">
+										<div class="product">
+											<div class="product-img">
+												<span class="category">{{ game.title }}</span>
+												<img class="first-img" src="{{ game.pic.url }}" alt="">
+												<a href="{{ game.media.url }}" class="video-play vid-zone">
+												<i class="fa fa-play"></i>
+												</a>
+											</div><br><br>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<!-- End single product -->
+
+						{% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Product Area -->
+        <!-- Start Gallery Area -->
+        <div class="project-area bg-color-2 fix area-padding">
+			<div class="container-full">
+			    <div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="section-headline white-headline text-center">
+							<h3>گالری ما</h3>
+							<p>استودیو جادوگر از سال 2003 شروع به تولید بازی های ابتکاری کرده است. ما خدمات مشتریان خود را به مشتریان خود ارائه می دهیم.</p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+                    <div class="awesome-project fix">
+						<div class="col-md-12 col-sm-12 col-xs-12">
+							<div class="awesome-menu text-center">
+								<ul class="project-menu">
+									<li><a href="#" class="active" data-filter="*" >همه</a></li>
+									<li><a href="#" data-filter=".screen">صفحه نمایش</a></li>
+									<li><a href="#" data-filter=".stream">استریم</a></li>
+									<li><a href="#" data-filter=".player">بازیکن</a></li>
+									<li><a href="#" data-filter=".challange">چالش</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+                    <div class="project-content">
+						{% for game in games %}
+						
+							<!-- single-awesome-project start -->
+							<div class="project-single screen">
+								<div class="single-awesome-project">
+									<div class="awesome-img">
+										<a class="venobox" data-gall="myGallery" href="{{game.pic.url}}">
+											<img src="{{ game.pic.url }}" alt="" />
+										</a>
+									</div>
+								</div>
+							</div>
+							<!-- single-awesome-project end -->
+
+						{% endfor %}
+                        
+                    </div>
+				</div>
+			</div>
+			<!-- End main content -->
+		</div>
+		<!-- End portfolio Area -->
+        <!-- Start testimonials Area -->
+        <div class="reviews-area bg-color-1 fix area-padding">
+            <div class="container">
+                <div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="section-headline white-headline text-center">
+							<h3>بازیکن ها</h3>
+							<p>استودیو جادوگر از سال 2003 شروع به تولید بازی های ابتکاری کرده است. ما خدمات مشتریان خود را به مشتریان خود ارائه می دهیم.</p>
+						</div>
+					</div>
+				</div>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="Reviews-content">
+                            <!-- start testimonial carousel -->
+                            <div class="testimonial-carousel item-indicator">
+                                <div class="single-testi">
+                                    <div class="testi-img ">
+                                        <img src="static/img/review/1.jpg" alt="">
+                                    </div>
+                                    <div class="testi-text">
+                                        <p>جایگزین کردن چندین متن از متن، متن ساختگی ساختگی مقدار خطوط را حفظ می کند. هنگام انتخاب یک جایگزین.</p>
+                                        <h4>آرنولد راشل</h4>
+                                        <span class="guest-rev">مشتری - <a href="#">مشتری عمومی</a></span>
+                                    </div>
+                                </div>
+                                <!-- End single item -->
+                                <div class="single-testi">
+                                    <div class="testi-img ">
+                                        <img src="static/img/review/2.jpg" alt="">
+                                    </div>
+                                    <div class="testi-text">
+                                        <p>جایگزین کردن چندین متن از متن، متن ساختگی ساختگی مقدار خطوط را حفظ می کند. هنگام انتخاب یک جایگزین.</p>
+                                        <h4>آرنولد راشل</h4>
+                                        <span class="guest-rev">مشتری - <a href="#">مشتری عمومی</a></span>
+                                    </div>
+                                </div>
+                                <!-- End single item -->
+                                <div class="single-testi">
+                                    <div class="testi-img">
+                                        <img src="static/img/review/3.jpg" alt="">
+                                    </div>
+                                    <div class="testi-text">
+                                        <p>جایگزین کردن چندین متن از متن، متن ساختگی ساختگی مقدار خطوط را حفظ می کند. هنگام انتخاب یک جایگزین.</p>
+
+                                        <h4>آرنولد راشل</h4>
+                                        <span class="guest-rev">مشتری  - <a href="#">مشتری عمومی</a></span>
+                                    </div>
+                                </div>
+                                <!-- End single item -->
+                                <div class="single-testi">
+                                    <div class="testi-img">
+                                        <img src="static/img/review/4.jpg" alt="">
+                                    </div>
+
+                                    <div class="testi-text">
+                                        <p>جایگزین کردن چندین متن از متن، متن ساختگی ساختگی مقدار خطوط را حفظ می کند. هنگام انتخاب یک جایگزین.</p>
+                                        <h4>آرنولد راشل</h4>
+                                        <span class="guest-rev">مشتری - <a href="#">مدیر عمومی</a></span>
+                                    </div>
+                                </div>
+                                <!-- End single item -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End testimonials end -->
+
+        <!-- Start Challange Area -->
+        <div class="challange-area bg-color-2 area-padding">
+            <div class="container">
+                <div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="section-headline white-headline text-center">
+							<h3>مسابقه</h3>
+							<p>استودیو جادوگر از سال 2003 شروع به تولید بازی های ابتکاری کرده است. ما خدمات مشتریان خود را به مشتریان خود ارائه می دهیم.</p>
+						</div>
+					</div>
+				</div>
+                <div class="row">
+					<!-- End single page -->
+					<div class="col-md-6 col-sm-6 col-xs-12">
+						<div class="tab-menu">
+							 <!-- Nav tabs -->
+							<ul class="nav nav-tabs" role="tablist">
+								
+								{% for comp in Competitions %}
+		
+								  <li class="cha-img">
+									<a href="#p-view-1" role="tab" data-toggle="tab">
+										<img class="cha-img" src="{{ comp.image.url }}" alt="{{ comp.title }}">
+										<span class="title-date">
+											<span class="cha-title">{{ comp.title }}</span>
+											<span class="cha-date">{{ comp.competition_date }}</span>
+										</span>
+									</a>
+								</li>
+								{% endfor %}
+								
+		
+							</ul>
+						</div>
+					</div>
+					
+					
+					<!-- <div class="col-md-6 col-sm-6 col-xs-12">
+						<div class="tab-content">
+							<div class="tab-pane active" id="p-view-1">
+								<div class="tab-inner">
+									<div class="single-page">
+										<div class="page-img">
+											<img src="static/img/challange/b1.jpg" alt="">
+										</div>
+										<a href="https://www.youtube.com/watch?v=O33uuBh6nXA" class="video-play">
+											<i class="fa fa-play"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane" id="p-view-2">
+								<div class="tab-inner">
+									<div class="single-page">
+										<div class="page-img">
+											<img src="static/img/challange/b2.jpg" alt="">
+										</div>
+										<a href="https://www.youtube.com/watch?v=O33uuBh6nXA" class="video-play">
+											<i class="fa fa-play"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane" id="p-view-3">
+								<div class="tab-inner">
+									<div class="single-page">
+										<div class="page-img">
+											<img src="static/img/challange/b3.jpg" alt="">
+										</div>
+										<a href="https://www.youtube.com/watch?v=O33uuBh6nXA" class="video-play">
+											<i class="fa fa-play"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane" id="p-view-4">
+								<div class="tab-inner">
+									<div class="single-page">
+										<div class="page-img">
+											<img src="static/img/challange/b4.jpg" alt="">
+										</div>
+										<a href="https://www.youtube.com/watch?v=O33uuBh6nXA" class="video-play">
+											<i class="fa fa-play"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div> -->
+
+					<!-- end column -->
+				</div>
+				<!-- end Row -->
+            </div>
+        </div>
+        <!-- End Challange end -->
+
+        <!--Blog Area Start-->
+
+        <div class="blog-area bg-color-1 area-padding">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="section-headline white-headline text-center">
+							<h3>اخبار بازی ها</h3>
+							<p>استودیو جادوگر از سال 2003 شروع به تولید بازی های ابتکاری کرده است. ما خدمات مشتریان خود را به مشتریان خود ارائه می دهیم.</p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="blog-grid">
+						{% for gameNew in gameNews %}
+							<!-- Start single blog -->
+						<div class="col-md-4 col-sm-12 col-xs-12">
+							<div class="single-blog">
+								<div class="blog-image">
+									<a class="image-scale" href="#">
+										<img src="{{ gameNew.image.url }}" alt="">
+									</a>
+								</div>
+								<div class="blog-content">
+								    <div class="blog-meta">
+										<span class="date-type">
+											{{ gameNew.publish_date }}
+										</span>
+
+										{% if gameNew.comment_count %}
+											<span class="comments-type">
+												<i class="fa fa-comment-o"></i>
+												{{ gameNew.comment_count}}
+											</span>
+										{% endif %}
+										
+
+									</div>
+									<a href="#">
+										<h4>{{ gameNew.title }}</h4>
+									</a>
+									<p>{{ gameNew.description|slice:"120" }}</p>
+									<a class="read-more" href="{{ gameNew.get_absolute_url }}"> ادامه مطلب</a>
+								</div>
+							</div>
+						</div>
+						<!-- End single blog -->
+						{% endfor %}
+						
+					</div>
+				</div>
+				<!-- End row -->
+			</div>
+		</div>
+
+		<!--End of Blog Area-->
+        <!-- Start Footer bottom Area -->
+
+{% endblock content %}

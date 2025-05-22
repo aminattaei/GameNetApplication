@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test api</title>
+</head>
+<style>
+
+    table{
+        border-color: red;
+        border-collapse: collapse;
+    }
+    
+</style>
+
+<body>
+    <table border="2px">
+        <tr>
+            <th>UserId</th>
+            <th>Id</th>
+            <th>Title</th>
+            <th>body</th>
+        </tr>
+
+        {% for i in item %}
+
+            <tr>
+                <td>{{ i.userId }}</td>
+                <td>{{ i.id }}</td>
+                <td>{{ i.title }}</td>
+                <td>{{ i.body }}</td>
+            </tr>
+
+        {% endfor %}
+    </table>
+</body>
+</html>

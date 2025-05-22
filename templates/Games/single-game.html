@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+
+{% block title %}
+  جزییات  {{ Game }}
+{% endblock title %}
+
+{% block content %}
+
+<!-- Start breadcumb Area -->
+<div class="page-area">
+	<div class="breadcumb-overlay"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-sm-12 col-xs-12">
+				<div class="breadcrumb text-center">
+					<div class="section-headline white-headline">
+						<h3>جزئیات بازی</h3>
+					</div>
+					<ul class="breadcrumb-bg">
+						<li class="home-bread">خانه</li>
+						<li>جزئیات بازی</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End breadcumb Area -->
+
+<!-- Stat Game Details Area -->
+<div class="game-details-page bg-color-2 page-padding">
+	<div class="container">
+		<div class="row">
+			<!-- Start service page -->
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<div class="single-page">
+					<div class="page-img">
+						<img src="{{ Game.pic.url }}" alt="">
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<div class="product-content text-left">
+					<h4 class="product-name">
+						<a href="#">{{ Game }}</a>
+					</h4>
+					<div class="launch-date">
+						<span>راه اندازی: {{ Game.launch_date }}</span>
+					</div>
+					<div class="price-box">
+						<span class="price">قیمت: {{ Game.price }} تومان</span>
+					</div>
+					<div class="pro-rating no-rating">
+						<span class="rating-rate"> امتیاز: {{ Game.rating }}</span>
+						
+						
+						
+
+					</div>
+					<p>{{ Game.description }}</p>
+					<div class="download-btn">
+						<span class="play-btn"><img src="{{ Game.media.url }}" alt=""></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row mar-row">
+			<div class="game-feature">
+				<!-- Start column -->
+				<div class="col-md-4 col-sm-4 col-xs-12">
+					<div class="game-system-head single-game">
+						<h4>سیستم عامل بازی</h4>
+						<p>اژدها جایگزین یک انتخاب متن در یک خط واحد، مقدار کلمات را حفظ می کند. هنگامی که انتخاب متن جایگزین به طور کامل از پایین بافته شده است. تقریبا حفظ شده است هنگامی که انتخاب متن جایگزین به طور کامل از پایین بافته شده است.</p>
+					</div>
+				</div>
+				<!-- Start column -->
+				<div class="col-md-8 col-sm-8 col-xs-12">
+					<div class="single-game-about">
+						<div class="game-about">
+							<div class="game-icon">
+								<i class="icon icon-database"></i>
+							</div>
+							<div class="game-text">
+								<h4>بازی اکشن</h4>
+								<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون</p>
+							</div>
+						</div>
+						<div class="game-about">
+							<div class="game-icon">
+								<i class="icon icon-magic-wand"></i>
+							</div>
+							<div class="game-text">
+								<h4>افکت بصری</h4>
+								<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون</p>
+							</div>
+						</div>
+						<div class="game-about">
+							<div class="game-icon">
+								<i class="icon icon-layers"></i>
+							</div>
+							<div class="game-text">
+								<h4>چند نفره</h4>
+								<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون</p>
+							</div>
+						</div>
+						<div class="game-about">
+							<div class="game-icon">
+								<i class="icon icon-crop"></i>
+							</div>
+							<div class="game-text">
+								<h4>سیستم انیمیشن</h4>
+								<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End column -->
+			</div>
+		</div>
+		<div class="row mar-row">
+		   <div class="col-md-6 col-sm-6 col-xs-12">
+				<div class="single-game">
+					<h4>سیستم کنترل بازی</h4>
+					<p>اژدها جایگزین یک انتخاب متن در یک خط واحد، مقدار کلمات را حفظ می کند. هنگامی که انتخاب متن جایگزین به طور کامل از حروف کوچکتر یا بزرگتر شروع می شود یا با حرف بزرگ شروع می شود.</p>
+					<ul class="marker-list">
+						<li>کلمات تقریبا حفظ شده است</li>
+						<li>نامه ها یا با حرف بزرگ شروع می شود</li>
+						<li>پوشش قبلی نگهداری می شود</li>
+						<li>میزان خطوط را حفظ می کند</li>
+						<li>کلمات تقریبا حفظ شده است</li>
+					</ul>
+				</div>
+			</div>
+			<!-- End single page -->
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<div class="single-page middle-image">
+					<div class="page-img">
+						<img src="img/product/p2.jpg" alt="">
+						<a href="{{ Game.media }}" class="video-play vid-zone">
+						   <i class="fa fa-play"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End main content -->
+</div>
+<!-- End Game Details Area -->
+
+{% endblock content %}

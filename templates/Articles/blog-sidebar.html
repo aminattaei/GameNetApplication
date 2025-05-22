@@ -1,0 +1,196 @@
+{% extends "base.html" %}
+{% load static %}
+{% block titel %}
+ وبلاگ | سایت جادوگر
+{% endblock titel %}
+
+
+{% block content %}
+
+        <!-- Start breadcumb Area -->
+        <div class="page-area">
+            <div class="breadcumb-overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="breadcrumb text-center">
+                            <div class="section-headline white-headline">
+                                <h3>نوار کناری وبلاگ</h3>
+                            </div>
+                            <ul class="breadcrumb-bg">
+                                <li class="home-bread">خانه</li>
+                                <li>نوار کناری وبلاگ</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End breadcumb Area -->
+        <!--Blog Area Start-->
+        <div class="blog-side-area bg-color-2 page-padding">
+			<div class="container">
+				<div class="row">
+					<div class="blog-sidebar">
+						<div class="col-md-8 col-sm-8 col-xs-12">
+							<div class="blog-right-column">
+								{% for article in articles %}
+									<div class="single-blog">
+										<div class="blog-image">
+											<a class="image-scale" href="{{ article.get_absolute_url }}">
+												<img src="{{ article.pic.url }}" alt="">
+											</a>
+										</div>
+										<div class="blog-content">
+											<div class="blog-meta">
+												<span class="date-type">
+													{{ article.created_time }}
+												</span>
+												
+											</div>
+											<a href="{{ article.get_absolute_url }}">
+												<h4>{{ article.title }}</h4>
+											</a>
+											<p>{{ article.content|slice:120 }}</p>
+										</div>
+									</div>
+								{% endfor %}
+								
+								<!-- End single blog -->
+								
+							</div>
+							<div class="blog-pagination">
+							   <ul class="pagination">
+								   <li><a href="#">بعدی</a></li>
+								   <li class="active"><a href="#">1</a></li>
+								   <li><a href="#">2</a></li>
+								   <li><a href="#">3</a></li>
+								   <li><a href="#">قبلی</a></li>
+							   </ul>
+							</div>
+						</div>
+						<!-- End single blog -->
+						<!-- Start single blog -->
+						<div class="col-md-4 col-sm-4 col-xs-12">
+							<div class="left-head-blog">
+								<div class="left-blog-page">
+									<!-- search option start -->
+									<form action="#">
+										<div class="blog-search-option">
+										<input type="text" placeholder="جستجو...">
+										<button class="button" type="submit">
+											<i class="fa fa-search"></i>
+										</button>
+									</div>
+								</form>
+								<!-- search option end -->
+							</div>
+							<div class="left-blog-page">
+								<div class="left-blog">
+									<h4>دسته ها</h4>
+									<ul>
+										<li><a href="#">جنگ اژدها</a></li>
+										<li><a href="#">انیمیشن غریبه</a></li>
+										<li><a href="#">چالش اسکای فال</a></li>
+										<li><a href="#">جنگ ریپل</a></li>
+										<li><a href="#">آلومورود دیوید</a></li>
+										<li><a href="#">مبارزه دنریس</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="left-blog-page">
+								<!-- recent start -->
+								<div class="left-blog">
+									<h4>پست های اخیر</h4>
+									<div class="recent-post">
+										<!-- start single post -->
+										<div class="recent-single-post">
+											<div class="post-img">
+												<a href="#">
+													<img src="img/blog/b1.jpg" alt="">
+												</a>
+											</div>
+											<div class="pst-content">
+												<p><a href="#">طراح باید مطمئن شود که نمونه اولیه به نظر می رسد.</a></p>
+												<span class="date-type">
+													26 ژانویه / 2018
+												</span>
+											</div>
+										</div>
+										<!-- End single post -->
+										<!-- start single post -->
+										<div class="recent-single-post">
+											<div class="post-img">
+												<a href="#">
+													<img src="img/blog/b2.jpg" alt="">
+												</a>
+											</div>
+											<div class="pst-content">
+												<p><a href="#">طراح باید مطمئن شود که نمونه اولیه به نظر می رسد.</a></p>
+												<span class="date-type">
+													26 ژانویه / 2018
+												</span>
+											</div>
+										</div>
+										<!-- End single post -->
+										<!-- start single post -->
+										<div class="recent-single-post">
+											<div class="post-img">
+												<a href="#">
+													<img src="img/blog/b3.jpg" alt="">
+												</a>
+											</div>
+											<div class="pst-content">
+												<p><a href="#">طراح باید مطمئن شود که نمونه اولیه به نظر می رسد.</a></p>
+												<span class="date-type">
+													26 ژانویه / 2018
+												</span>
+											</div>
+										</div>
+										<!-- End single post -->
+										<!-- start single post -->
+										<div class="recent-single-post">
+											<div class="post-img">
+												<a href="#">
+													<img src="img/blog/b4.jpg" alt="">
+												</a>
+											</div>
+											<div class="pst-content">
+												<p><a href="#">طراح باید مطمئن شود که نمونه اولیه به نظر می رسد.</a></p>
+												<span class="date-type">
+													26 ژانویه / 2018
+												</span>
+
+											</div>
+										</div>
+										<!-- End single post -->
+									</div>
+								</div>
+								<!-- recent end -->
+							</div>
+							<div class="left-blog-page">
+								<div class="left-tags blog-tags">
+									<div class="popular-tag left-side-tags left-blog">
+										<h4>برچسب های محبوب</h4>
+										<ul>
+											<li><a href="#">اژدها</a></li>
+											<li><a href="#">غریبه</a></li>
+											<li><a href="#">چالش</a></li>
+											<li><a href="#">ریپل</a></li>
+											<li><a href="#">آلومورود</a></li>
+											<li><a href="#">دنریس</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- End single blog -->
+					</div>
+				</div>
+				<!-- End row -->
+			</div>
+		</div>
+		<!--End of Blog Area-->		
+    
+{% endblock content %}
