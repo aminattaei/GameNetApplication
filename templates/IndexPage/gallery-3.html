@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+تصاویر بازی های ما | سایت جادوگر
+
+{% endblock title %}
+
+
+{% block content %}
+
+
+        <!-- Start breadcumb Area -->
+        <div class="page-area">
+            <div class="breadcumb-overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="breadcrumb text-center">
+                            <div class="section-headline white-headline">
+                                <h3>گالری بازی ها</h3>
+                            </div>
+                            <ul class="breadcrumb-bg">
+                                <li class="home-bread">خانه</li>
+                                <li>گالری</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End breadcumb Area -->
+        <!-- Start Gallery Area -->
+        <div class="project-area bg-color-2 page-padding">
+			<div class="container">
+				<div class="row">
+                    <div class="awesome-project fix">
+						<div class="col-md-12 col-sm-12 col-xs-12">
+							<div class="awesome-menu text-center">
+								<ul class="project-menu">
+									<li><a href="#" class="active" data-filter="*" >همه</a></li>
+									<li><a href="#" data-filter=".screen">صفحه نمایش</a></li>
+									<li><a href="#" data-filter=".stream">استریم</a></li>
+									<li><a href="#" data-filter=".player">بازیکن</a></li>
+									<li><a href="#" data-filter=".challange">چالش</a></li>
+								</ul>				
+							</div>
+						</div>
+					</div>
+                    <div class="project-content project-column-3">
+
+
+                        {% for pic in pictures %}
+                            <!-- single-awesome-project start -->
+                            <div class="project-single screen">
+                                <div class="single-awesome-project">
+                                    <div class="awesome-img">
+                                        <a class="venobox" data-gall="myGallery" href="{{ pic.pic.url }}">
+                                            <img src="i{{ pic.pic.url }}" alt="{{ pic.title }}" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- single-awesome-project end -->
+                        
+                        {% endfor %}
+                        
+
+                    </div>
+				</div>	
+			</div>
+			<!-- End main content -->
+		</div>
+		<!-- End portfolio Area -->
+
+{% endblock content %}

@@ -1,52 +1,136 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
-{% block content %}
-    <style>
-        .form-container {
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 500px; /* افزایش عرض فرم */
-            margin: auto;
-            border-style: dotted;
-        }
-        
-        .form-control {
-            padding: 15px; /* افزایش فاصله داخلی */
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            font-size: 16px;
-            width: 100%; /* عریض‌تر شدن input ها */
-        }
-        #signup{
-            width: 100%;
-            font-weight: bold;
-            font-size: 20px;
-        }
-        
-    </style>
+{% block title %}
 
+حسابتان را اینجا کنید | سایت جادوگر
+
+{% endblock title %}
+
+
+{% block content %}
+
+
+<style>
+    body {
+        background: linear-gradient(135deg, #8e2de2, #4a00e0);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+    }
+
+    .form-wrapper {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .form-container {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 40px;
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        max-width: 500px;
+        color: #fff;
+    }
+
+    .form-container h1 {
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        text-align: center;
+        color: #ffffff;
+    }
+
+    .form-control {
+        background-color: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: #fff;
+    }
+
+    .form-control::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    #signup {
+        width: 100%;
+        font-size: 18px;
+        font-weight: 600;
+        padding: 12px;
+        background: linear-gradient(135deg, #c471ed, #f64f59);
+        border: none;
+        color: #fff;
+        transition: all 0.3s ease;
+    }
+
+    #signup:hover {
+        background: linear-gradient(135deg, #f64f59, #c471ed);
+    }
+
+    .form-footer {
+        margin-top: 20px;
+        text-align: center;
+        color: #ddd;
+    }
+
+    .form-footer a {
+        color: #ffffff;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .form-footer a:hover {
+        text-decoration: underline;
+    }
+
+    .messages {
+        margin-top: 20px;
+    }
+
+    .alert {
+        background-color: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: #fff;
+    }
+
+    footer {
+        text-align: center;
+        padding: 15px;
+        color: #ccc;
+        font-size: 14px;
+    }
+</style>
+
+<div class="form-wrapper">
     <div class="form-container">
         <h1>ثبت‌نام</h1>
-        <form action="" method="post" novalidate>
+
+        <form method="post" novalidate>
             {% csrf_token %}
-            {{ form|crispy}}
-            <button type="submit" class="btn btn-primary" id="signup">ثبت‌نام</button>
+            {{ form|crispy }}
+            <button type="submit" class="btn" id="signup">ثبت‌نام</button>
         </form>
+
         <div class="form-footer">
-            <p>قبلاً حساب دارید؟ <a href="{% url 'login' %}">ورود</a></p>
+            <p>قبلاً حساب دارید؟ <a href="{% url 'login' %}">وارد شوید</a></p>
         </div>
+
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <div class="alert mt-3" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
     </div>
-    {% if messages %}
-        <div class="messages">
-            {% for message in messages %}
-                <div class="alert {% if message.tags %}alert-{{ message.tags }}{% else %}alert-info{% endif %}">
-                    {{ message }}
-                </div>
-            {% endfor %}
-        </div>
-    {% endif %}
+</div>
+
 
 {% endblock content %}

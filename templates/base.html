@@ -85,12 +85,12 @@
 												<ul class="sub-menu">
 													<li><a href="{% url 'about-us' %}">درباره ما</a></li>
 													<li><a href="{% url 'team_members_list' %}">تیم</a></li>
-													<li><a href="faq.html">سوالات متداول</a></li>
+													<li><a href="{% url "faq_template" %}">سوالات متداول</a></li>
 												</ul>
 											</li>
 											<li><a class="pagess" href="{% url 'games_list' %}">بازی ها</a>
 											</li>
-											<li><a class="pagess" href="#">گالری</a>
+											<li><a class="pagess" href="{% url "gallery_list" %}">گالری</a>
 											</li>
 											<li><a class="pagess" href="{% url 'matchs_list' %}">مسابقات</a>
 											</li>

@@ -33,3 +33,9 @@ class GameNewsDetailView(generic.DetailView):
 
 class FaqTemplateView(generic.TemplateView):
     template_name='IndexPage/faq.html'
+
+
+class GalleryListView(generic.ListView):
+    model = Game
+    context_object_name='pictures'
+    template_name = "IndexPage/gallery-3.html"

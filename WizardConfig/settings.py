@@ -1,4 +1,5 @@
 from pathlib import Path
+
 import os
 from datetime import timedelta
 
@@ -6,6 +7,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = "django-insecure-hj5mr6qotnw(&jcuve5!t16@!qjdiul4%)jte1tqo&u&&djpm&"
 DEBUG = True
+ZXCVBN_MIN_SCORE = 3
 ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
@@ -26,6 +28,9 @@ INSTALLED_APPS = [
     "ContactUs",
     "Competition",
     "accounts",
+    'crispy_forms',
+    'crispy_bootstrap5',
+
     
     
     # < --- TOOLS --- >
@@ -33,6 +38,8 @@ INSTALLED_APPS = [
     "rest_framework_simplejwt",
     "drf_spectacular",
     "drf_spectacular_sidecar",
+    'zxcvbn_password',
+
 ]
 
 MIDDLEWARE = [
@@ -82,6 +89,13 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
     {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
+    {
+        'NAME': 'zxcvbn_password.ZXCVBNValidator',
+        'OPTIONS': {
+            'min_score': 3,
+            'user_attributes': ('username', 'email', 'first_name', 'last_name')
+        }
+    }
 ]
 
 LANGUAGE_CODE = "en-us"
@@ -102,9 +116,15 @@ REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ),
-    "DEFAULT_PERMISSIONS_CLASSES": "rest_framework.permissions.IsAuthenticated",
+
+    "DEFAULT_PERMISSION_CLASSES": [
+    "rest_framework.permissions.IsAuthenticated",
+    ],
+
     "DEFAULT_PAGINATION_CLASS": ("rest_framework.pagination.PageNumberPagination"),
+
     "PAGE_SIZE": 5,
+
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
 }
 
@@ -132,8 +152,10 @@ LOGOUT_REDIRECT_URL = "http://127.0.0.1:8000/"
 
 AUTH_USER_MODEL = "accounts.CustomUser"
 
+
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 CORS_ALLOW_ALL_ORIGINS = True
+
