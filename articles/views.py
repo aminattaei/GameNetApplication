@@ -32,26 +32,27 @@ class ArticleModelViewSet(ReadOnlyModelViewSet):
 
 def Article_Detail(request, pk):
     article = get_object_or_404(Article, id=pk)
-    comment_article = Article_Comment.objects.filter(comment_article=article)
+    comments = Article_Comment.objects.filter(article=article)
+    form = CommentForm(request.POST or None)
 
-    form = CommentForm()
     if request.method == "POST":
-        form = CommentForm(request.POST)
         if form.is_valid():
             if request.user.is_authenticated:
-                obj = form.save(commit=False)
-                
-                
-                
-                messages.success(request, "نظر شما با موفقیت ثبت شد با تشکراز شما")
+                comment = form.save(commit=False)
+                comment.article = article
+                comment.author = request.user
+                comment.email = request.user.email or 'no@email.com'
+                comment.save()
+                messages.success(request, "نظر شما با موفقیت ثبت شد. با تشکر از شما.")
+                return redirect(request.path)
             else:
                 messages.error(request, "قبل از ارسال نظر وارد شوید")
                 return redirect("home_index")
         else:
-            form = CommentForm()
+            messages.error(request,'نام کاربری یا رمز عبور صحیح نمی باشد!')
 
-    return render(
-        request,
-        "Articles/blog-details.html",
-        context={"article": article, "comments": comment_article, "form": form},
-    )
+    return render(request, "Articles/blog-details.html", {
+        "article": article,
+        "comments": comments,
+        "form": form,
+    })

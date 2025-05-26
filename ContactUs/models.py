@@ -12,8 +12,8 @@ class ContactUs(models.Model):
     )
 
     class Meta:
-        verbose_name = _("ContactUs")
-        verbose_name_plural = _("ContactUss")
+        verbose_name = _("ارتباط")
+        verbose_name_plural = _("ارتباطات")
 
     def __str__(self):
         return f"Name: {self.name} / Time: {self.created_time}"

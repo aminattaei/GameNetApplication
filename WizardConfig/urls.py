@@ -16,7 +16,8 @@ from drf_spectacular.views import (
 
 urlpatterns = [
     # <--- Start Apps Area Urls --- >
-    path("config-wizard-administrator/", admin.site.urls),
+    path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
+    path('config-wizard-administrator/', admin.site.urls),
     path("", include("IndexPage.urls")),
     path("games/", include("games.urls")),
     path("competitions/", include("Competition.urls")),

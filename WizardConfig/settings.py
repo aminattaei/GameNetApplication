@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "drf_spectacular",
     "drf_spectacular_sidecar",
     'zxcvbn_password',
+    'admin_honeypot'
 
 ]
 

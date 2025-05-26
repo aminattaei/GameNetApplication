@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils.translation import gettext as _
+from django.utils.translation import gettext_lazy as _
 from django.urls import reverse
 from django.contrib.auth import get_user_model
 from django.conf import settings
@@ -27,7 +27,7 @@ class Article(models.Model):
 
 class Article_Comment(models.Model):
     article=models.ForeignKey(Article, verbose_name=_("مقاله"), on_delete=models.CASCADE)
-    author=models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=_(""), on_delete=models.CASCADE)
+    author=models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=_("نویسنده"), on_delete=models.CASCADE)
     
     email=models.EmailField(_("پست الکترونیکی"), max_length=254)
     message=models.TextField(_('متن نظر'))
@@ -39,4 +39,4 @@ class Article_Comment(models.Model):
         verbose_name_plural='نظرات'
 
     def __str__(self):
-        return f' first_name ={self.first_name} / created_time = {self.created_time} '
+        return f' first_name ={self.author} / created_time = {self.created_time} '

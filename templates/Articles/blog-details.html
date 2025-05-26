@@ -69,12 +69,12 @@
 
 															<div class="comments-content-wrap">
 																<span>
-																	<b><a href="#">{{ comment.user_name }}</a></b>
+																	<b><a href="#">{{ comment.author.profile_pic.url }}</a></b>
 																	نویسنده پست
 																	<span class="post-time">{{ comment.created_time|date }}</span>
 																	<a href="#">پاسخ</a>
 																</span>
-																<p>{{ comment.content|slice:100 }}</p>
+																<p>{{ comment.message}}</p>
 															</div>
 														</div>
 													</li>
@@ -90,15 +90,7 @@
 									{% csrf_token %}
 
 										<div class="row">
-											<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-												<p>نام اصلی *</p>
-												<input type="text" name="first_name" />
-											</div>
-
-											<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-												<p>نام خانوادگی *</p>
-												<input type="text" name="last_name" />
-											</div>
+											
 
 											<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 												<p>ایمیل *</p>
