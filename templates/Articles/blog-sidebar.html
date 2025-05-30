@@ -53,21 +53,40 @@
 											</a>
 											<p>{{ article.content|slice:120 }}</p>
 										</div>
+									{% empty %}
+										<p>مقاله‌ای پیدا نشد!</p>
 									</div>
 								{% endfor %}
 								
 								<!-- End single blog -->
 								
 							</div>
+
+
 							<div class="blog-pagination">
-							   <ul class="pagination">
-								   <li><a href="#">بعدی</a></li>
-								   <li class="active"><a href="#">1</a></li>
-								   <li><a href="#">2</a></li>
-								   <li><a href="#">3</a></li>
-								   <li><a href="#">قبلی</a></li>
-							   </ul>
-							</div>
+    <ul class="pagination">
+
+        {% if page_obj.has_previous %}
+            <li><a href="?page={{ page_obj.previous_page_number }}">قبلی</a></li>
+        {% endif %}
+
+        {% for num in page_obj.paginator.page_range %}
+            {% if page_obj.number == num %}
+                <li class="active"><a href="?page={{ num }}">{{ num }}</a></li>
+            {% else %}
+                <li><a href="?page={{ num }}">{{ num }}</a></li>
+            {% endif %}
+        {% endfor %}
+
+        {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}">بعدی</a></li>
+        {% endif %}
+
+    </ul>
+</div>
+
+
+
 						</div>
 						<!-- End single blog -->
 						<!-- Start single blog -->

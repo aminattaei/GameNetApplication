@@ -1,11 +1,13 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.views import generic
+from django.core.paginator import Paginator
 
 from rest_framework.viewsets import ModelViewSet, ReadOnlyModelViewSet
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework.pagination import PageNumberPagination
+
 
 
 from .models import Article, Article_Comment
@@ -17,7 +19,8 @@ class ArticleListView(generic.ListView):
     model = Article
     context_object_name = "articles"
     template_name = "Articles/blog-sidebar.html"
-
+    paginate_by=5
+    ordering=['-created_time']
 
 
 
