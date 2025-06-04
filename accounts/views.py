@@ -1,8 +1,7 @@
-# accounts/views.py
-
 from django.contrib.auth import logout, login
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
+from django.shortcuts import redirect
 
 from .forms import CustomUserCreationForm
 
@@ -13,14 +12,10 @@ class RegisterUserAccount(CreateView):
 
     def dispatch(self, request, *args, **kwargs):
         if request.user.is_authenticated:
-            logout(request)
+            return redirect(self.success_url)
         return super().dispatch(request, *args, **kwargs)
 
     def form_valid(self, form):
-        response = super().form_valid(form)
         user = form.save()
         login(self.request, user)
-        return response
-
-
-
+        return super().form_valid(form)

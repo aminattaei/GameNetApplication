@@ -6,6 +6,7 @@ from django.conf import settings
 
 
 class Article(models.Model):
+    categories=models.ForeignKey("Category", verbose_name=_("دسته"), on_delete=models.CASCADE)
     pic = models.ImageField(_("تصویر"), upload_to="articles/")
     created_time = models.DateField(
         _("تاریخ قرارگیری در سایت"), auto_now=False, auto_now_add=True
@@ -40,3 +41,19 @@ class Article_Comment(models.Model):
 
     def __str__(self):
         return f' first_name ={self.author} / created_time = {self.created_time} '
+    
+
+
+class Category(models.Model):
+    name=models.CharField(_("نام دسته بندی"), max_length=50)
+    description=models.TextField(_("توضیحات دسته بندی"),null=True,blank=True)
+
+    class Meta:
+        verbose_name = _("دسته بندی")
+        verbose_name_plural = _("دسته بندی ها")
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse("Category_detail", kwargs={"pk": self.pk})
