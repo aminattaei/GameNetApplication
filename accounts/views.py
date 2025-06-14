@@ -7,7 +7,7 @@ from .forms import CustomUserCreationForm
 
 class RegisterUserAccount(CreateView):
     form_class = CustomUserCreationForm
-    success_url = reverse_lazy("ShopPage:home-page")
+    success_url = reverse_lazy("home_index")
     template_name = "registration/signup.html"
 
     def dispatch(self, request, *args, **kwargs):

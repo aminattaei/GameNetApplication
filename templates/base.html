@@ -79,7 +79,7 @@
                             <nav class="navbar navbar-default">
                                 <div class="collapse navbar-collapse" id="navbar-example">
                                     <div class="main-menu">
-                                        <ul class="nav navbar-nav navbar-right">
+                                        <ul class="nav navbar-nav navbar-right">            
                                             <li><a href="{% url 'home_index' %}">خانه</a></li>
 											<li><a class="pagess" href="#">صفحات</a>
 												<ul class="sub-menu">
@@ -96,6 +96,13 @@
 											</li>
 											<li><a class="pagess" href="{% url 'articles_list' %}">وبلاگ</a></li>
 											<li><a href="{% url 'create_new_contact' %}">تماس</a></li>
+                                            
+                                            {% if user.is_authenticated %}
+                                                <li ><a href="#" style="color: #4ade80;">سلام {{user.username}} خوش آمدی!</a> </li>
+                                            {% else %}
+                                                <li><a class="pagess" href="http://127.0.0.1:8000/accounts/login/">ورود</a></li>
+                                                <li><a class="pagess" href="{% url 'register' %}">ثبت نام</a></li>
+                                            {% endif %}  
                                         </ul>
                                     </div>
                                 </div>

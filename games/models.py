@@ -54,6 +54,7 @@ class Game(models.Model):
     pic = models.ImageField(_("تصویر بازی"), upload_to="Games/images", null=True)
     media = models.FileField(_("رسانه"), upload_to="Games/media/", max_length=100)
     description = models.TextField(_("توضیحات"))
+    gallery_type=models.SlugField(_("نام لاتین بازی"))
 
     class Meta:
         verbose_name = _("بازی")
